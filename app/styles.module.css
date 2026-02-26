@@ -52,6 +52,14 @@
   color: #0078e8;
 }
 
-.contentScroll {
+.entireFeed {
   margin-top: 3.125rem;
+  padding: 0.75rem;
+}
+
+.post {
+  width: 23.43756rem;
+  height: 0.0625rem;
+  border-top: 1px solid #e0e0e0;
+  margin: 1rem -0.75rem;
 }
