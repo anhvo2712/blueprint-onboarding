@@ -2,10 +2,8 @@
 
 import { FiHeart as HeartIcon } from "react-icons/fi";
 import { GoPaperAirplane as ShareIcon } from "react-icons/go";
-import { LuCircle as ProfileIcon } from "react-icons/lu";
 import { TbMessageCircle } from "react-icons/tb";
-import Image from "next/image";
-import styles from "./Post.module.css";
+import styles from "./styles.module.css";
 
 interface PostProps {
   username: string;
@@ -31,9 +29,11 @@ export default function Post({
   return (
     <>
       <div className={styles.postHeader}>
-        <div className={styles.profileIcon}>
-          <ProfileIcon size={40} color="#D9D9D9" />
-        </div>
+        <img
+          src="/assets/profile.svg"
+          alt="Profile Icon"
+          className={styles.profileIcon}
+        />
         <div className={styles.postInfo}>
           <p className={styles.usernameOrganization}>
             <span className={styles.name}>{username}</span> at{" "}
@@ -44,11 +44,9 @@ export default function Post({
       </div>
 
       {imageUrl && (
-        <Image
+        <img
           src={imageUrl}
           alt={`${organization} post`}
-          width={375}
-          height={250}
           className={styles.postImage}
         />
       )}
@@ -61,9 +59,9 @@ export default function Post({
       </div>
 
       <div className={styles.engagementSection}>
-        <HeartIcon className={styles.engagementIcon} size={24} />
-        <TbMessageCircle className={styles.engagementIcon} size={24} />
-        <ShareIcon className={styles.shareButton} size={24} />
+        <HeartIcon className={styles.engagementIcon} />
+        <TbMessageCircle className={styles.engagementIcon} />
+        <ShareIcon className={styles.shareButton} />
       </div>
 
       <p className={styles.date}>{date}</p>

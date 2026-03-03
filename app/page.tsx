@@ -1,11 +1,7 @@
 "use client";
 
-// import { FiHeart as HeartIcon } from "react-icons/fi";
-// import { GoPaperAirplane as ShareIcon } from "react-icons/go";
-// import { LuCircle as ProfileIcon } from "react-icons/lu";
-// import { TbMessageCircle } from "react-icons/tb";
 import { BlueprintLogo } from "@/assets/logos/BlueprintLogo";
-import Post from "@/components/Post";
+import PostComponent from "@/components/Posts";
 import "@/styles/global.css";
 import styles from "./styles.module.css";
 
@@ -23,7 +19,7 @@ export default function Home() {
         </div>
 
         <div className={styles.entireFeed}>
-          <Post
+          <PostComponent
             username="etam3"
             organization="Mission Bit"
             location="San Francisco, CA"
@@ -35,7 +31,7 @@ export default function Home() {
           />
 
           <hr className={styles.post} />
-          <Post
+          <PostComponent
             username="carolyn123"
             organization="Boys and Girls Club"
             location="Oakland, CA"
