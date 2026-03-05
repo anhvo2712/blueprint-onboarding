@@ -1,7 +1,7 @@
-import styles from "./styles.module.css";
 import { FiHeart as HeartIcon } from "react-icons/fi";
 import { GoPaperAirplane as ShareIcon } from "react-icons/go";
 import { TbMessageCircle } from "react-icons/tb";
+import styles from "./styles.module.css";
 
 interface PostProps {
   username: string;
@@ -20,7 +20,7 @@ export default function Post({
   state,
   text,
   image,
-  likeCount,  
+  likeCount,
 }: PostProps) {
   return (
     <>
@@ -35,16 +35,14 @@ export default function Post({
             <span className={styles.name}>{username}</span> at{" "}
             <span className={styles.organization}>{npo}</span>
           </p>
-          <p className={styles.location}>{city}, {state}</p>
+          <p className={styles.location}>
+            {city}, {state}
+          </p>
         </div>
       </div>
 
       {image && (
-        <img
-          src={image}
-          alt={`${npo} post`}
-          className={styles.postImage}
-        />
+        <img src={image} alt={`${npo} post`} className={styles.postImage} />
       )}
 
       <p className={styles.postText}>{text}</p>
@@ -60,6 +58,5 @@ export default function Post({
         <ShareIcon className={styles.shareButton} />
       </div>
     </>
-  );  
+  );
 }
-

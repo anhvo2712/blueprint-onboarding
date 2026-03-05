@@ -11,16 +11,16 @@ type Post = {
   post_text: string;
   location_id: number;
   image_link: string;
-  num_likes: number; 
-}
+  num_likes: number;
+};
 
 // you can define the Post type in this file itself or in a separate file and import it, either is ok!
 export async function getAllPosts(): Promise<Post[]> {
-	const { data,error } = await supabase.from('posts').select('*');
-	// handle errors here
-	if (error) {
-		console.error("Error fetching posts:", error);
-		return [];
-	}
-	return data;
-} 
+  const { data, error } = await supabase.from("posts").select("*");
+  // handle errors here
+  if (error) {
+    console.error("Error fetching posts:", error);
+    return [];
+  }
+  return data;
+}
