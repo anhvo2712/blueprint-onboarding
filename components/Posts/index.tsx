@@ -14,7 +14,7 @@ interface PostProps {
   likes: number;
   comments: number;
   date: string;
-}
+  }
 
 export default function Post({
   username,
@@ -29,12 +29,13 @@ export default function Post({
   return (
     <>
       <div className={styles.postHeader}>
-        <img
-          src="/assets/profile.svg"
-          alt="Profile Icon"
-          className={styles.profileIcon}
-        />
-        <div className={styles.postInfo}>
+          
+          <img
+          src="/assets/profile.svg" 
+          alt="Profile Icon" 
+          className={styles.profileIcon} 
+          />
+          <div className={styles.postInfo}>
           <p className={styles.usernameOrganization}>
             <span className={styles.name}>{username}</span> at{" "}
             <span className={styles.organization}>{organization}</span>
@@ -62,9 +63,11 @@ export default function Post({
         <HeartIcon className={styles.engagementIcon} />
         <TbMessageCircle className={styles.engagementIcon} />
         <ShareIcon className={styles.shareButton} />
-      </div>
+    </div>
 
       <p className={styles.date}>{date}</p>
     </>
   );
 }
+
+
