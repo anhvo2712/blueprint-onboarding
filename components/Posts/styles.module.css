@@ -81,6 +81,7 @@
   gap: 1.5rem;
   margin-top: 0.5rem;
   justify-content: space-between;
+  align-items: center;
 }
 
 .shareButton {
@@ -94,7 +95,7 @@
 }
 
 .engagementIcon {
-  height: 2rem;
+  height: 1rem;
   flex-shrink: 0;
   align-self: stretch;
 }

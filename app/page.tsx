@@ -20,6 +20,12 @@ type PostData = {
     city_name: string;
     state_abbr: string;
   } | null;
+  Comments: Array<{
+    id: number;
+    user_name: string;
+    comment_text: string;
+    created_at: string;
+  }> | null;
 };
 
 export default function Home() {
@@ -31,6 +37,12 @@ export default function Home() {
         Locations (
           city_name,
           state_abbr
+        ),
+        Comments!post_id (
+          id, 
+          user_name,
+          comment_text, 
+          created_at 
         )
       `);
 
@@ -67,13 +79,8 @@ export default function Home() {
           {postData == null ? (
             <p>Loading...</p>
           ) : (
-            postData.map((postItem, index) => {
-              const imageMap: Record<string, string> = {
-                etam3:
-                  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800",
-              };
-
-              return (
+            postData.map((postItem, index) => (
+              <>
                 <Post
                   key={postItem.id}
                   username={postItem.user_name}
@@ -83,9 +90,11 @@ export default function Home() {
                   image={postItem.image_link}
                   likeCount={postItem.num_likes}
                   text={postItem.post_text}
+                  comments={postItem.Comments || []}
                 />
-              );
-            })
+                {index < postData.length - 1 && <hr className={styles.post} />}
+              </> // Add separator
+            ))
           )}
         </div>
       </div>

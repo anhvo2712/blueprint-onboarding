@@ -11,6 +11,12 @@ interface PostProps {
   text: string;
   image?: string;
   likeCount: number;
+  comments?: Array<{
+    id: number;
+    user_name: string;
+    comment_text: string;
+    created_at: string;
+  }>;
 }
 
 export default function Post({
@@ -21,6 +27,7 @@ export default function Post({
   text,
   image,
   likeCount,
+  comments = [],
 }: PostProps) {
   return (
     <>
@@ -49,7 +56,7 @@ export default function Post({
 
       <div className={styles.commentSection}>
         <p className={styles.commentText}>{likeCount} Likes</p>
-        <p className={styles.commentText}>View Comments</p>
+        <p className={styles.commentText}>View {comments.length} Comments</p>
       </div>
 
       <div className={styles.engagementSection}>
